@@ -1,0 +1,21 @@
+from django.http import JsonResponse, HttpResponseServerError
+from django.core.exceptions import ObjectDoesNotExist
+from .models import Article
+import logging
+logger = logging.getLogger(__name__)
+def article_detail(request, article_id):
+try:
+article = Article.objects.get(id=article_id)
+data = {
+    'id':article.id,
+    'title':article.title,
+    'content':article.content,
+    'author':article.author.username
+}
+return JsonResponse(data)
+except Article.DoesNotExist:
+logger.warning(f"Article with id{article_id} was not found.")
+return JsonResponse({'error':'Article not found.'},status=404)
+except Exception as e:
+logger.error(f"An error occured retrieving article {article_id}: {str(e)}")
+return JsonResponse({'error':'An internal server error occured. please try again later.'},status=500)

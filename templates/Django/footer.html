@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Footer with Copyright Information</title>
+        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+                font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+            }
+            body{
+                min-height:100vh;
+                display:flex;
+                flex-direction:column;
+                background:linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 100%);
+            }
+            .content{
+                flex:1;
+                padding:2rem;
+                max-width:1200px;
+                margin:0 auto;
+                width:100%;
+            }
+            header{
+                text-align:center;
+                margin-bottom:2rem;
+                padding:1rem;
+                background:white;
+                border-radius:10px;
+                box-shadow:0 4px,6px,rgba(0,0,0,0.1);
+            }
+            h1{
+                color:#2c3e50;
+                margin-bottom:0.5rem;
+            }
+            .description{
+                color:#7f8c8d;
+                max-width:600px;
+                margin:0 auto;
+                line-height:1.6;
+            }
+            .card-container{
+                display:grid;
+                grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+                gap:1.5rem;
+                margin-bottom:2rem;
+            }
+            .card{
+                background:white;
+                border-radius:10px;
+                overflow:hidden;
+                box-shadow:0 4px 6px rgba(0,0,0,0.1);
+                transition:transform 0.3s ease;
+            }
+            .card:hover{
+                transform:translateY(-5px);
+            }
+            .card-content{
+                padding:1.5rem;
+            }
+            .card h3{
+                color:#2c3e50;
+                margin-bottom:0.5rem;
+            }
+            .card p{
+                color:#7f8c8d;
+                line-height:1.6;
+            }
+            footer{
+                background:#2c3e50;
+                color:blue;
+                padding:2rem 1rem;
+                margin-top:auto;
+            }
+            .footer-container{
+                max-width:1200px;
+                margin:0 auto;
+                display:grid;
+                grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+                gap:2rem;
+            }
+            .footer-section{
+                display:flex;
+                flex-direction:column;
+            }
+            .footer-section h3::after{
+                content:'';
+                position:absolute;
+                left:0;
+                bottom:0;
+                width:50px;
+                height:2px;
+                background:#3498db;
+            }
+            .footer-links{
+                list-style:none;
+            }
+            .footer-links li{
+                margin-bottom:0.5rem;
+            }
+            .footer-links a{
+                color:#bdc3c7;
+                text-decoration:none;
+                transition:color 0.3s;
+            }
+            .footer-links a:hover{
+                color:#3498db;
+            }
+            .social-icons{
+                display:flex;
+                gap:1rem;
+                margin-top:1rem;
+            }
+            .social-icons a{
+                display:inline-flex;
+                align-items:center;
+                justify-content:center;
+                width:40px;
+                height:40px;
+                background:rgba(255,255,255,0.1);
+                border-radius:50%;
+                color:red;
+                text-decoration:none;
+                transition:all 0.3s ease;
+            }
+            .social-icons a:hover{
+                background:#3498db;
+                transform:translateY(-3px);
+            }
+            .copyright{
+                text-align:center;
+                padding-top:2rem;
+                margin-top:2rem;
+                border-top:1px solid rgba(255,255,255,0.1);
+                color:#bdc3c7;
+                font-size:0.9rem;
+            }
+            .copyright a{
+                color:#3498db;
+                text-decoration:none;
+            }
+            @media (max-width:768px){
+                .footer-container{
+                    grid-template-columns:1fr;
+                    text-align:center;
+                }
+                .footer-section h3::after{
+                    left:50%;
+                    transform:translateX(-50%);
+                }
+                .social-icons{
+                    justify-content:center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <header>
+                <h1>Website Content Example</h1>
+                <p class="description">This is sample page demonstrating a responsive footer with automatic copyright year updating.</p>
+            </header>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Responsive Design</h3>
+                        <p>This footer adapts to different screen sizes and devices,ensuring optimal viewing experience on mobile,tablet, and desktop.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Modern Design</h3>
+                        <p> Clean and Professional design with subtle animations and a color scheme that complements most website styles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>About us</h3>
+                    <p>We create beautiful and funtional web solution a tailored to your needs.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i calss="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                <h3 Contact Info</h3>
+                <p><i class="fasfa-map-marker-alt"></i>123 Web Street, Digital City</p>
+                <p><i class="fasfa-phone"></i>+1(555)123-4567</p>
+                <p><i class="fasfa-envelope"></i>info@example.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy;<span id="currentYear"></span>Your Company Name.All Rights Reserved.|<a href="#">Privacy Policy</a>|<a href="#">Terms of Service</a></p>
+            </div>
+        </footer>
+        <script>
+            document.getElementById('currentYear').textContent=newDate().getFullYear();
+        </script>
+    </body>
+</html>

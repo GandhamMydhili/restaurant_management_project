@@ -1,0 +1,22 @@
+from rest_framework.views import APIView
+from rest_framework.response import response
+class MenuAPIView(APIView):
+def get(self, request):
+menu = [
+    {
+        "name":"Margherita Pizza",
+        "description":"Classic Pizza with tomato sauce, mozzarela, and basil.",
+        "price":8.99
+    },
+    {
+        "name": "Pasta Alfredo",
+        "description": "Creamy Alfredo sauce with fettuccine pasta.",
+        "price":12.50
+    },
+    {
+        "name": "Caesar Salad",
+        "description": "Crisp romaine lettuce, croutons, and Caesar dressing.",
+        "price": 7.25
+    }
+]
+return Response(menu)

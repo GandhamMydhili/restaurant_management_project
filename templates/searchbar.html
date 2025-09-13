@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Restaurant Menu</title>
+    </head>
+    <body>
+        <h1>Welcome to our Restaurant</h1>
+        <form method="get" action="">
+            <input type="text" name="q" placeholder="Search menu..."value=" {{query|default:''}}">
+            <button type="submit">Search</button>
+        </form>
+        <h2>Menu</h2>
+        <ul>
+            {% for item in menu_items %}
+            <li>
+                <strong>{{ item.name }}</strong>-${{ item.price }}</br>
+                {{ item.description }}
+            </li>
+            {% empty %}
+            <li> No menu items found. </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
+    

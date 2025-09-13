@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8">
-        <title>Contact Us - {{ restaurant_name }}</title>
+        <title>Contact Us</title>
     </head>
     <body>
-        <h1>Contact Us</h1>
-        <p><strong>Restaurant:</strong> {{ restaurant_name }}</p>
-        <p><strong>Address:</strong> {{ address }}</p>
-        <p><strong>Phone:</strong> {{ phone }}</p>
-        <p><strong>Email:</strong> {{ email }}</p>
-        <br>
-        <a href="/">Back to Home</a>
+        <h2>Contact Form</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Send</button>
+        </form>
     </body>
 </html>

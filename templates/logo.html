@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Restaurant Homepage</title>
+    </head>
+    <body>
+        <h1>Welcome to {{ restaurant.name }}</h1>
+        {% if restaurant.logo %}
+        <img src="{{restaurant.logo.url}}"alt="Restaurant Logo" width=="200" height="200">
+        {% else %}
+        <p>No logo available.</p>
+        {% endif %}
+        {% if restaurant.phone_number %}
+        <p>Call us at:<strong>{{ restaurant.phone_number }}</strong></p>
+        {% endif %}
+    </body>
+</html>
